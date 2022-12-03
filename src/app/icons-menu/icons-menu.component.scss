@@ -1,0 +1,27 @@
+@use "src/global/colors";
+@use "src/global/functions";
+
+:host {
+  @include functions.flex(flex-end, center, column);
+  width: 30%;
+}
+
+.menu-icons {
+  @include functions.flex(center, center);
+  .header-icon {
+    margin: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  :host {
+    @include functions.flex(center, center);
+    width: 100%;
+  }
+  .menu-icons {
+    @include functions.flex(center, center);
+    .header-icon {
+      margin: 0 3rem;
+    }
+  }
+}

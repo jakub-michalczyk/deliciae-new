@@ -1,0 +1,10 @@
+@use "src/global/fonts";
+
+body,
+html {
+  margin: 0;
+}
+
+* {
+  @extend .font-1;
+}
