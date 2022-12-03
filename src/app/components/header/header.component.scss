@@ -17,53 +17,11 @@
   @include functions.flex(space-between, center);
   width: 100%;
   padding-left: 1%;
-  .menu {
-    margin: 0;
-    padding: 0;
-    max-width: 70%;
-    list-style: none;
-  }
-  .menu-link {
-    display: inline-block;
-    margin: 0 10px;
-    text-align: center;
-    color: inherit;
-    text-decoration: none;
-    &::after {
-      content: "";
-      display: block;
-      border-radius: 50px;
-      height: 2px;
-      margin: 5px auto 0 auto;
-      width: 0%;
-      opacity: 0;
-      transition: all 0.2s;
-      background-color: colors.$black;
-    }
-    &.important {
-      color: colors.$red;
-      font-weight: bold;
-      &::after {
-        background-color: colors.$red;
-      }
-    }
-    &:hover {
-      &::after {
-        opacity: 1;
-        width: 25px;
-      }
-    }
-  }
-  .menu-icons {
-    @include functions.flex(flex-end, center);
-    width: 30%;
-    .header-icon {
-      margin: 0 7.5px;
-    }
-  }
 }
 
 .mobile-header {
+  position: relative;
+  z-index: 3;
   display: none;
   label {
     @include functions.flex(flex-start, flex-start, column);
@@ -106,6 +64,23 @@
   }
 }
 
+.mobile-menu {
+  padding-top: 20%;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: colors.$white;
+  border-left: 1px solid colors.$black;
+  transform: translate(0);
+  transition: transform 0.2s ease-in-out;
+  &.hidden {
+    transform: translate(100%);
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .header {
     @include functions.flex(space-between, center);
@@ -113,7 +88,21 @@
   .header-content {
     display: none;
   }
-  .mobile-header {
+  .mobile-header,
+  .mobile-menu {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile-menu {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile-menu {
+    border-left: none;
+    width: 100%;
   }
 }

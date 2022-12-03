@@ -1,0 +1,25 @@
+<header class="header">
+    <div class="logo">
+        <img src="assets/images/logo.png">
+    </div>
+    <div class="mobile-header">
+        <label for="check"
+               (change)="menuToggle()">
+            <input type="checkbox"
+                   id="check" />
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </div>
+    <div class="header-content">
+        <app-menu></app-menu>
+        <app-icons-menu></app-icons-menu>
+    </div>
+</header>
+
+<div class="mobile-menu"
+     [ngClass]="{'hidden': menuHidden}">
+    <app-icons-menu></app-icons-menu>
+    <app-menu></app-menu>
+</div>

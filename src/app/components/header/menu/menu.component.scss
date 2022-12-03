@@ -1,0 +1,68 @@
+@use "src/global/colors";
+@use "src/global/functions";
+
+:host {
+  width: 70%;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .menu-link {
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+    &::after {
+      content: "";
+      display: block;
+      border-radius: 50px;
+      height: 2px;
+      margin: 5px auto 0 auto;
+      width: 0%;
+      opacity: 0;
+      transition: all 0.2s;
+      background-color: colors.$black;
+    }
+    &.important {
+      color: colors.$red;
+      font-weight: bold;
+      &::after {
+        background-color: colors.$red;
+      }
+    }
+    &:hover {
+      &::after {
+        opacity: 1;
+        width: 25px;
+      }
+    }
+  }
+  .menu-icons {
+    @include functions.flex(flex-end, center);
+    width: 30%;
+    .header-icon {
+      margin: 0 7.5px;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .menu {
+    @include functions.flex(center, center, column);
+    max-width: 100%;
+    padding-top: 10%;
+    .menu-link {
+      width: 35%;
+      background: colors.$dark;
+      color: colors.$white;
+      margin: 1rem 0;
+      padding: 0.5rem 0;
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
