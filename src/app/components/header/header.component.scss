@@ -1,11 +1,12 @@
 @use "src/global/colors";
 @use "src/global/functions";
+@use "src/global/variables";
 
 .header {
   @include functions.flex(flex-start, center);
   width: 100%;
   box-sizing: border-box;
-  min-height: 10vh;
+  min-height: variables.$header_height;
   border-bottom: 1px solid colors.$black;
   padding: 0 2.5rem;
   .logo img {
