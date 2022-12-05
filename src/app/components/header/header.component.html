@@ -4,7 +4,7 @@
     </div>
     <div class="mobile-header">
         <label for="check"
-               (change)="menuToggle()">
+               modalToggle="mobile-menu">
             <input type="checkbox"
                    id="check" />
             <span></span>
@@ -18,8 +18,4 @@
     </div>
 </header>
 
-<div class="mobile-menu"
-     [ngClass]="{'hidden': menuHidden}">
-    <app-icons-menu></app-icons-menu>
-    <app-menu></app-menu>
-</div>
+<app-mobile-menu></app-mobile-menu>

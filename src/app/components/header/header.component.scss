@@ -22,7 +22,7 @@
 
 .mobile-header {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   display: none;
   label {
     @include functions.flex(flex-start, flex-start, column);
@@ -62,23 +62,6 @@
         transform: translate(30px, -11px) rotatez(45deg);
       }
     }
-  }
-}
-
-.mobile-menu {
-  padding-top: 20%;
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background-color: colors.$white;
-  border-left: 1px solid colors.$black;
-  transform: translate(0);
-  transition: transform 0.2s ease-in-out;
-  &.hidden {
-    transform: translate(100%);
   }
 }
 

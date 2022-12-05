@@ -1,2 +1,2 @@
-$header_height: 10vh;
-$fullpage: 100vh - $header_height;
+$header_height: 100px;
+$fullpage: calc(100vh - #{$header_height});

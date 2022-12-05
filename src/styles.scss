@@ -8,3 +8,7 @@ html {
 * {
   @extend .font-1;
 }
+
+.block-scroll {
+  overflow-y: hidden;
+}
