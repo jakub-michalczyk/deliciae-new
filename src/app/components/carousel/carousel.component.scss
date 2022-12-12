@@ -1,0 +1,67 @@
+@use "src/global/functions";
+@use "src/global/fonts";
+@use "src/global/colors";
+
+.carousel {
+  padding: 2rem 16rem;
+  .carousel-title {
+    @include functions.flex(center, center, column);
+    text-align: center;
+    margin-bottom: 5%;
+    .title {
+      @extend .font-3;
+      font-size: 3rem;
+      color: colors.$dark;
+    }
+    .subtitle {
+      font-size: 2rem;
+      color: #ccc;
+    }
+  }
+  .carousel-wrap {
+    @include functions.flex(center, center);
+  }
+  .arrows {
+    position: absolute;
+    z-index: 2;
+    width: 90%;
+    .arrow {
+      left: 0;
+      position: absolute;
+      top: 50%;
+      background: transparent;
+      border: none;
+      outline: none;
+      margin: 0 3rem;
+      cursor: pointer;
+      &.arrow-right {
+        right: 0;
+        left: auto;
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .carousel {
+    padding: 2rem 10rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .carousel {
+    padding: 2rem;
+    .arrows {
+      width: 100%;
+      .arrow {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        filter: invert(1);
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}

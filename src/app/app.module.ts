@@ -10,6 +10,9 @@ import { HeroImageComponent } from './components/hero-image/hero-image.component
 import { ModalRightComponent } from './core-components/modal-right/modal-right.component';
 import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 import { ModalToggleDirective } from './directives/modal-toggle.directive';
+import { SwiperModule } from 'swiper/angular';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +24,10 @@ import { ModalToggleDirective } from './directives/modal-toggle.directive';
     ModalRightComponent,
     ModalToggleDirective,
     MobileMenuComponent,
+    CarouselComponent,
+    ProductCardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, SwiperModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -4,3 +4,11 @@ export interface Modal {
   hidden: boolean;
   blockScroll?: boolean;
 }
+
+export interface Slide {}
+
+export interface Slider {
+  slides: Slide[];
+  title: string;
+  subtitle: string;
+}

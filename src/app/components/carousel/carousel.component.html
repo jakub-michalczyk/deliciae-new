@@ -1,0 +1,36 @@
+<div class="carousel">
+    <h1 class="carousel-title">
+        <span class="title">{{ data.title }}</span>
+        <span class="subtitle">{{ data.subtitle }}</span>
+    </h1>
+
+    <div class="carousel-wrap">
+
+
+        <swiper [config]="swiperConfig">
+            <ng-template swiperSlide
+                         *ngFor="let slides of data?.slides">
+                <ng-container *ngTemplateOutlet="carouselSlide"></ng-container>
+            </ng-template>
+
+        </swiper>
+        <div class="arrows">
+            <button class="arrow"
+                    (click)="swipePrev()">
+                <img src="assets/icons/arrow.png">
+            </button>
+            <button class="arrow arrow-right"
+                    (click)="swipeNext()">
+                <img src="assets/icons/arrow.png">
+            </button>
+        </div>
+    </div>
+
+
+</div>
+
+
+<ng-template #carouselSlide
+             class="slide">
+    <app-product-card></app-product-card>
+</ng-template>
